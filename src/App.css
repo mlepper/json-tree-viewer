@@ -1,38 +1,131 @@
+:root {
+  --bg-dark: #121212;
+  --accent-green: #32CD32;
+  --accent-blue: #00BFFF;
+  --text-light: #FFFFFF;
+  --text-medium: #A9A9A9;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--bg-dark);
+}
+
+.App-header h1 {
+  color: var(--accent-blue);
+  margin: 0.5rem 0 0.5rem 0;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.search-box {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin: 0 1rem;
+}
+
+.search-icon {
+  color: var(--text-medium);
+  margin-right: 0.5rem;
+}
+
+.search-input {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1rem;
+  padding: 0.25rem;
+  width: 200px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-medium);
+}
+
+.font-size-controls {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.font-size-btn {
+  background: none;
+  border: none;
+  color: var(--accent-blue);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.font-size-btn:hover {
+  background-color: rgba(0, 191, 255, 0.1);
+  color: var(--accent-green);
+}
+
+.font-size-btn:active {
+  transform: scale(0.95);
+}
+
+.dropzone {
+  border: 2px dashed var(--accent-green);
+  border-radius: 8px;
+  padding: 0.25rem;
+  margin: 0.25rem auto;
+  max-width: 600px;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 30px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 0.8rem;
+  color: var(--text-medium);
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.dropzone:hover {
+  border-color: var(--accent-blue);
+  background-color: rgba(0, 191, 255, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropzone.active {
+  border-color: var(--accent-blue);
+}
+
+.App-main {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: calc(100vh - 100px);
+}
+
+.json-tree-container {
+  background-color: var(--bg-dark);
+  border-radius: 8px;
+  overflow: auto;
+  height: 100%;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-data-message {
+  color: var(--text-medium);
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2rem;
 }

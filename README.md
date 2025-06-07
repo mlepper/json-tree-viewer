@@ -1,12 +1,29 @@
-# Getting Started with Create React App
+# JSON Tree Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based JSON viewer with expandable/collapsible tree structure, editing capabilities, and search functionality.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Expandable/collapsible JSON tree view
+- Edit JSON values directly in the tree
+- Search functionality to filter JSON by key or value
+- Font size adjustment controls
+- Drag and drop JSON file upload
+- Preloaded test JSON file for quick testing
 
-### `npm start`
+## Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+The app will be available at http://localhost:3000
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
