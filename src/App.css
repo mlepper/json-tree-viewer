@@ -6,16 +6,171 @@
   --text-medium: #A9A9A9;
 }
 
-.App {
-  min-height: 100vh;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-dark);
-  color: var(--text-light);
+  color: var(--accent-green);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--accent-green);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .App-header {
-  padding: 1rem;
-  text-align: center;
+  padding: 0.5rem 1rem;
   background-color: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.App-header h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--accent-green);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 0 0.5rem;
+  color: var(--accent-green);
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.toolbar-group:last-child {
+  margin-right: 0;
+}
+
+.toolbar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  padding: 0.5rem;
+  height: 100%;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.toolbar-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.file-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.file-button:hover {
+  color: var(--accent-green);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.file-button:active {
+  transform: scale(0.95);
+  color: var(--accent-blue);
+}
+
+.toolbar-icon {
+  color: var(--accent-green);
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.toolbar-icon:hover {
+  color: var(--accent-blue);
+}
+
+.toolbar-icon {
+  color: var(--accent-green);
+  font-size: 1.2rem;
+}
+
+.search-box {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 0 0.5rem;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+
+.search-input {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1rem;
+  padding: 0.25rem;
+  width: 200px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-medium);
+}
+
+.font-size-controls {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.font-size-button {
+  background: none;
+  border: none;
+  color: var(--accent-green);
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.font-size-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.font-size-button:active {
+  transform: scale(0.95);
 }
 
 .App-header h1 {
@@ -106,21 +261,21 @@
 
 .App-main {
   padding: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  height: calc(100vh - 100px);
+  background-color: var(--bg-dark);
+  overflow: hidden;
+}
+
+.json-tree-wrapper {
+  height: 100%;
+  overflow: hidden;
 }
 
 .json-tree-container {
-  background-color: var(--bg-dark);
+  height: calc(100% - 2rem);
+  padding: 1rem;
   border-radius: 8px;
-  overflow: auto;
-  height: 100%;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  /* overflow-y: auto; */
 }
 
 .no-data-message {

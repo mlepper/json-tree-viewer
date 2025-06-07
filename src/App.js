@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import JsonTree from './components/JsonTree';
-import FileDrop from './components/FileDrop';
-import FontSizeControl from './components/FontSizeControl';
-import SearchBox from './components/SearchBox';
+import Toolbar from './components/Toolbar';
 import './App.css';
 
 function App() {
@@ -74,22 +72,24 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>JSON Tree Viewer</h1>
-        <FileDrop onFileDrop={handleFileDrop} />
-        <SearchBox onSearch={setSearchTerm} searchTerm={searchTerm} />
-        <FontSizeControl 
-          onIncrease={() => handleFontSizeChange(2)}
-          onDecrease={() => handleFontSizeChange(-2)}
+        <span style={{ color: 'var(--accent-green)' }}>JSON Tree Viewer</span>
+        <Toolbar 
+          onFileDrop={handleFileDrop}
+          onFontSizeChange={handleFontSizeChange}
+          searchTerm={searchTerm}
+          onSearch={setSearchTerm}
         />
       </header>
       <main className="App-main">
-        {filteredData && (
-          <JsonTree 
-            data={filteredData} 
-            onEdit={handleEdit} 
-            fontSize={fontSize}
-          />
-        )}
+        <div className="json-tree-wrapper">
+          {filteredData && (
+            <JsonTree 
+              data={filteredData} 
+              onEdit={handleEdit} 
+              fontSize={fontSize}
+            />
+          )}
+        </div>
       </main>
     </div>
   );

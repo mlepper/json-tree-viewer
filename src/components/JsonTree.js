@@ -32,7 +32,9 @@ const JsonTree = ({ data, onEdit, fontSize = 14 }) => {
           borderRadius: '8px',
           padding: '16px',
           fontSize: `${fontSize}px`,
-          fontFamily: 'monospace'
+          fontFamily: 'monospace',
+          height: '100%',
+          overflowY: 'auto'
         }}
       />
     </div>
